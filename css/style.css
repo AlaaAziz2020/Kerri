@@ -4,12 +4,10 @@
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-    
-  }
-  /*Navbar*/
-  .navbar-nav{color:#e65f78}
- 
+    overflow-x: hidden;    
+}
+/* ___________________________________START NAVBAR_____________________________________ */
+
 .custom-nav {
     background-color: #4333338c !important;
     padding: 20px 0px;
@@ -31,86 +29,87 @@ body{
     font-weight: 500;
 }
 
-.custom-nav .navbar-brand .logo-light,
-.custom-nav .navbar-brand .logo-dark {height: 27px;}
-
-.logo .logo-light {display: inline-block;}
-
-.stickyadd .logo .logo-dark { display: inline-block;}
-
-.stickyadd .logo .logo-light {display: none;}
-
-.logo .logo-dark {display: none;}
-
-.custom-nav .navbar-brand {color: #fff !important;text-transform: uppercase;}
-
-.custom-nav .navbar-toggler {color: #fff;font-size: 35px;padding: 0px;}
-
-.custom-nav.stickyadd {background-color: #fff !important;box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.050980392156862744);padding: 15px 0px;}
-
-.custom-nav.stickyadd .navbar-nav li a {color: #000 !important;}
-.navbar-toggler {
-    border-radius: .25rem;
-    line-height: 1;
-    background-color: transparent;
-}
-
-@media (min-width: 200px) and (max-width: 768px){
-.custom-nav .navbar-toggler {
-    font-size: 32px;
-    color: #000;
-    border: none;
-}
-}
+/* ___________________________________END NAVBAR_____________________________________ */
 
 
-  /*Navbar*/
-  /*home*/
+
+/* ___________________________________START HOME_____________________________________ */
   .header-bg-img {
-    position: relative;
-    background-image: url(../images/header-bg.jpg);
-    background-size: cover;
-    background-position: center center;
-}
-
-.header-content {max-width: 800px;}
-
-.header-table-center { display: table-cell; vertical-align: middle;}
-
-.header-table {
     width: 100%;
-    height: 100%;
-   display: table;
-   
+    height: 100vh;
+
+}
+.header-bg-img{
+    background-image: linear-gradient(#0004, #0004), 
+    url('../images/smartphone-1445448_1920.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.header-bg-img {clip-path: none;
+    padding: 120px 0 140px;
 }
 
-.header-name {font-size: 54px;}
+.wrapper{
+    display: inline-flex;
+}
 
-.header-desc {line-height: 1.8;color: rgba(255, 255, 255, 0.75) !important; max-width: 500px;}
-
-.scroll_down {
+.wrapper .static-txt{
     color: #fff;
-    font-size: 13px;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts{
+    margin-left:15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+#pOne{
+    font-size: 40px; 
+    font-weight: 400; 
+    color: #fff; 
+}
+#pTwo{
+    font-weight: 400; 
+    color: #fff;
+    line-height: 1.9rem;
+}
+
+#CV{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid #fefefe;
+    width: 179px;
+    height: 46px;
+    transition: 0.7s;
+}
+#CV:hover{
+    background: #552E28;
+    color: #fff;
+    border:none;
+    transition: 0.7s;
+
+}
+.scroll_down {
     position: absolute;
     bottom: 5vh;
-    z-index: 8;
     width: 100%;
     text-align: center;
-
-  
+    color: #fff;
+    font-size: 13px;
+    z-index: 8;
 }
 
 .scroll_down i {
     position: relative;
-    -webkit-animation: bounce 2s infinite; 
-    animation: bounce 2s infinite; 
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    display: inline-block;
     height: 44px;
     width: 28px;
     line-height: 54px;
-    color: #fff;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    display: inline-block;
     font-size: 10px;
 }
 
@@ -120,104 +119,40 @@ body{
     top: 22px;
     left: 11px;
     z-index: -1;
-    bottom: 0px;
-    transition: all .2s;
     height: 10px;
     width: 3px;
-    background: #fff;
-    border-radius: 2px;
+    background-color: #fff;
 
 }
- 
-/*home*/
-
-
-.header-bg-img{
-    background-image: linear-gradient(#0005, #0005), url('../images/header-bg.jpg');
-    background-size: cover;
-    background-position: center;
+.custom-nav {
+    background-color: transparent !important;
+    padding: 10px 0px !important;
 }
-.header-bg-img {clip-path: none;padding: 120px 0 140px;}
+.custom-nav .navbar-nav li a{
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    color: #222 !important;
 
-.wrapper{display: inline-flex;}
-
-.wrapper .static-txt{color: #fff;font-size: 60px; font-weight: 400;}
-
-.wrapper .dynamic-txts{margin-left:15px;height: 90px; line-height: 90px;overflow: hidden;}
-
-.dynamic-txts li{ 
-    position:relative;
-     top:0; 
-     list-style: none; 
-     font-size: 60px; 
-     font-weight: 500; 
-     color: #fff; 
-     animation: slide 6s steps(4) infinite;
-    }
-@keyframes slide {
-    100%{
-        top:-360px
-    }
 }
-.dynamic-txts li span{position: relative;}
-.dynamic-txts li span::after{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    width: 100%;
-    border-left: 2px solid #fff;
-    animation: typing 1.5s steps(10) infinite;
+.navbar-nav li.active a{
+    color: #222 !important;
 }
-@keyframes typing {
-    100%{
-        left: 100%;
-        margin: 0 -35px 0 35px;
-    }
-}
-.header-content {max-width: 800px;}
+/* ___________________________________ END HOME_____________________________________ */
 
-.header-name {font-size: 38px;}
-
- .scroll_down {width: 100%;text-align: center;color: #fff;font-size: 13px;z-index: 8;}
-
-    .scroll_down i { position: relative; animation: bounce 2s infinite; height: 44px; width: 28px; line-height: 54px; border-radius: 30px; border: 2px solid #ffffff; display: inline-block;font-size: 10px;
-    }
-    .btn-round {border-radius: 30px;}
-
-    .btn-outline-custom {border: 2px solid #f5f5f5;width: 179px;height: 46px;}
-
-    .home a{color:#fff}
-
-    .home a:hover{color:#000;background-color:#fff}
-
-    .custom-nav { background-color: #fff !important; padding: 10px 0px !important;}
-
-    .custom-nav .navbar-toggler {color: #000;font-size: 32px;border: none;}
-
-    .custom-nav .navbar-brand .logo-light, .custom-nav .navbar-brand .logo-dark {height: 27px;}
-
-    .custom-nav .logo .logo-dark {display: inline-block;}
-
-    .custom-nav .navbar-nav li a { font-size: 15px; background-color: transparent !important; letter-spacing: 0.05em; transition: all 0.5s; font-weight: 500; color:#fff }
-
-    .navbar-nav li.active a, .about-social li a:hover {color: #e65f78 !important;}
-   
-/*home*/
-
-/*about*/
+/* ___________________________________START ABOUT_____________________________________ */
 .about h4 span{color: #e65f78}
 
 .about p{
-     color: #6c757d!important;
+     color: gray!important;
+     font-weight: 500;
+     font-size: 17px;
 }
-.header-desc {
-  max-width: 500px;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.75) !important;
-  }
 
-.about ul{font-size:25px;color:#000};
+.about ul{
+    font-size:25px;
+    color:#e65f78;
+}
 
 .about .about-social li a{
     color: #000;
@@ -226,50 +161,63 @@ body{
     width: 42px;
     font-size: 20px;
     border-radius: 50%;
-    border: 2px solid #d4d4d4;
+    border: 2px solid #e65f78;
     line-height: 38px;
-    transition: all 0.5s;
+    transition: all 0.2s;
     text-align: center;
 }
+
 .about-social li a {
-    color: #000;
+    color: #e65f78 !important;
     display: inline-block;
     height: 42px;
     width: 42px;
     font-size: 20px;
     border-radius: 50%;
-    border: 2px solid #d4d4d4;
+    border: 1px solid #e65f78 !important;
     line-height: 38px;
-    transition: all 0.5s;
+    transition: all 0.2s;
     text-align: center;
-
 }
-/*about*/
+/* ___________________________________END ABOUT_____________________________________ */
 
 
 /*Services*/
 .services-boxes {
-    border: 1px solid #e8e8e8;
+    border: 1px solid #552E28;
 }
 .services-boxes .services-title-border {
     height: 2px;
     width: 40px;
     margin: 15px auto;
-    transition: all 0.5s;
 }
+
 .btn-custom, .back_top,
  .services-title-border,
-.work_menu a.active,
 .work_menu a:hover {
-    background-color: #e65f78;
+    background-color: #552E28;
 }
-.services i{width:20%}
-
+.services i{
+    width:20%
+}
 
 /*services*/
 /*Statements*/
- .section a{
- text-decoration: none; color:#fff
+ .section .btnHire{
+    text-decoration: none; 
+    color: #222;
+    border: 1px solid #552E28;
+    font-weight: 400;
+    padding: 10px 20px;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+ .section .btnHire:hover{
+    color: #fff;
+    background-color: #552E28;
+    transition: 0.5s;
+
 }
 /*Statement*/
 
@@ -277,58 +225,77 @@ body{
 
 
 /*Clients*/
-/*our work*/
-.work ul li{text-decoration: none;}
+
+/* ____________________________________START OUR WORK____________________________________ */
+#pThree{
+    font-style: italic;
+    font-size: 18px !important;
+    color: gray;
+    margin-top: 20px;
+}
+.work ul li{
+    margin-bottom: 10px;
+}
 
  .work_menu li a {
-        cursor: pointer;
-        display: block;
-        color: #000;
-        border-radius: 30px;
-        letter-spacing: 0.03em;
-        margin-bottom: 5px;
-        font-weight: 600;
-        font-size: 14px;
-        padding: 6px 16px;
-        transition: all 0.5s;
-        margin-top: 5px;
-        text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 5px;
+    text-decoration: none;
+    padding: 5px 20px;
 }
-.work_menu a.active, 
-.work_menu a:hover {
-    background-color: #e65f78;color: #fff;}
+ .work_menu li a:hover{
+    color: #fff !important;
+    background-color: #552E28;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.work_menu a.active{
+    color: #fff;
+    text-decoration: underline oldlace;
+    background-color: #552E28;
+}
 
-.work .btn-custom{ background-color: #e65f78;}
-.work_box {overflow: hidden;}
+.btn-custom{
+    margin-bottom: 10px;
+    color: #222;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #552E28;
+    font-size: 18px !important;
+    font-weight: 500;
+}
+.btn-custom:hover{
+    color: #fff;
+    border: none;
+    background-color: #552E28;
+}
 
-.work_box .work_img {overflow: hidden;}
-
-.work_box .work_detail { opacity: 0; position: absolute; left: 0; overflow: hidden; color: #ffffff; width: 100%; padding: 20px; box-sizing: border-box;}
-
-.work_item {padding: 15px;}
-
-.work_box .work_detail p {color: rgba(255, 255, 255, 0.6);font-size: 14px;}
-/*our work*/
+/* ____________________________________END OUR WORK____________________________________ */
 
 /*Blog*/
 
 .blog .content-blog  a{text-decoration: none}
 
-.blog .text-custom{color:#e65f78}
-
+.blog .text-custom{color:#552E28}
 /*Blog*/
 
 
 /*Contact*/
-.contact i {color: #e65f78 ;}
+.contact i {color: #552E28 ;}
 
-.contact .text-custom {color: #e65f78 !important;}
+.contact .text-custom {color: #552E28 !important;}
 
 .form .form-control { box-shadow: none !important; height: 50px; border: 2px solid #e0e0e0;}
 
 .form textarea.form-control { height: auto;}
 
-.contact .btn{ background-color: #d8576f; height:50px; border-color: #d8576f; color:#fff}
+.contact .btn{ background-color: #552E28; height:50px; border-color: #552E28; color:#fff}
 
 /*contact*/
 /*Footer*/
@@ -348,6 +315,9 @@ body{
     transition: all 0.5s;
 
 }
+.footer .footer-alt ul li a:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+}
 .footer i{ color: #6c757d;}
 
 
@@ -358,16 +328,12 @@ body{
     position:fixed;
     right: 20px;
     bottom: 15px;
-    z-index: 10000;
-    height: 35px;
-   width: 35px;
-    border-radius: 3px;
- 
-    transition: all 0.5s;
+    background: transparent;
 }
 .back_top i {
     line-height: 35px;
     font-size: 32px;
-    color: #fff;
+    color: #552E28;
 }
+
 /*Back_top*/
